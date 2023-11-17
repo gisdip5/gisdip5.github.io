@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: black;
+        font-family: Arial, sans-serif;
+        background-color: #c1c1c1;
+        background-size: cover;
+      }
+
+      .login-container {
+        background-color: brown;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+
+      .input-group input {
+        width: 300px;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+
+      .login-button {
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .login-button:hover {
+        background-color: #c1c1c1;
+      }
+    </style>
+       <script src="sijs/cookie.js"></script>
+  </head>
+ 
+  <body>
+    <div class="login-container">
+        <H2>JANGAN LUPA LOGIN</H2>
+      <div class="input-group">
+        <input type="text"  id="username" />
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" />
+      </div>
+      <button type="submit" class="login-button" id="button"
+      onclick="PostSignUp()">Sign In</button>
+    <!-- <h4>Tidak punya akun?</h4>
+    <a href="signup.html">Daftar</a> -->
+    </div>
+
+    <script type="module" src="./sijs/post.js"></script>
+    <script type="module">
+      // Nama cookie yang akan diperiksa
+  
+  
+      import { getCookie } from "https://jscroot.github.io/cookie/croot.js";
+      const cookieName = "token";
+  
+      // Periksa apakah cookie ada dengan menggunakan fungsi dari file cookieUtil.js
+      if (getCookie(cookieName)) {
+        // Jika cookie tidak ada, arahkan kembali ke halaman signin
+        window.location.href = "./dashboard.html";
+      }
+    </script>
+
+    <script src="sijs/main.js"></script>
+  </body>
+</html>
